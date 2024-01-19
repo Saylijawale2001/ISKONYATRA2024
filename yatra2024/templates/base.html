@@ -5,6 +5,7 @@
     <!-- Required meta tags  for adjusting website according to size-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!--Owl Carousel CSS-->
@@ -22,32 +23,33 @@
     <script src="{% static 'app/js/myscript.js' %}"></script>
     <title>ISKON_YATRA2024| {% block title %} {% endblock title %} </title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg base  " style="padding: 20px; height: 80px;">
-     <div class="container">
-      <a class="navbar-brand text-white" href="#">
-    <img src="/media/iskonlogo.jpg" alt="Logo" width="30" height="24" class="d-inline-block navbar-brand align-text-top">
-    ISKON YATRA2024
+  <body >
+    <nav class="navbar navbar-expand-lg base  " >
+     <div class="container"><a class="navbar-brand d-flex align-items-center text-white" href="#">
+    <img src="{% static 'app/images/image.png' %}" alt="Logo" width="80" height="80" class="d-inline-block align-text-top">
+    <span class="ms-2">ISKON YATRA2024</span>
 </a>
+
    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
            <li class="nav-item">
-             <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+             <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
            </li>
             <li class="nav-item mx-2">
-             <a href="/" class="nav-link text-white">Registration</a>
+             <a href="{% url 'custregistration' %}" class="nav-link text-white">Registration</a>
             </li>
          </ul>
-       </div></nav>
+       </div>
+    </nav>
     {% block banner_slider %} {% endblock banner_slider %}
 
     {% block main-content %} {% endblock main-content %}
 <div>
     <!-- Start Footer -->
-    <footer class="container-fluid bg-dark text-center p-2 mt-5">
+    <footer class="container-fluid  text-center p-2 mt-5 base">
         <small class="text-white"> || Designed  By Sayli jawale || </small>
 
     </footer> <!-- End Footer -->
@@ -56,11 +58,51 @@
 <style>
   .base{
   color:white;
-  background: black;
-  margin:px;
-  padding:10px;
+  background: #0077b6;
   text-align:center;
   }
+  .textf{
+  color:white;
+  text-align:center;
+  }
+  <style>
+        body {
+            background-image: url('{% static 'app/images/pxfuel.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.7);
+           /*  background-color: rgba(255, 255, 255, 0.5);*/
+          /* Semi-transparent white overlay */
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px; /* Adjust width as needed */
+            margin: auto; /* Center the container */
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: 100%;
+            height: 30px; /* Adjust height as needed */
+            margin: 5px 0;
+        }
+
+        .btn-link {
+            color: black; /* Change the text color as needed */
+        }
+
+
 </style>
+
 
 </html>
