@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% load static%}
+{% block main-content %}
+<style>
+    body {
+            background-image: url('{% static 'app/images/newpeak.png' %}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-attachment:fixed;
+        }
+
+</style>
+<html>
+<body>
+    <div class="login-container my-5" style="width: 400px;" >
+       <center> <h4>BCEC YATRA 2024
+            <img src="/static/app/images/imageicon.png" alt="Image Description" style="height: 80px; width: auto;">
+       </h4>
+
+        <!-- Phone Number -->
+        <div class="mb-3">
+            <label for="phoneNumber" style="width: 300px; margin-bottom: 15px;">Enter Phone Number</label>
+            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber "  style="width: 300px; margin-bottom: 15px;" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <label for="password" style="width: 300px; margin-bottom: 15px;">Enter Password</label>
+            <input type="password" class="form-control" id="password" style="width: 300px; margin-bottom: 15px;" name="password" required>
+        </div>
+
+        <!-- Login Button -->
+        <div class="mb-3">
+          <center>  <button type="submit" style="width: 300px; height:35px; margin-bottom: 20px;" class="btn  rounded-button base">Login</button></center>
+        </div>
+
+        <!-- Registration Link -->
+        <div>
+            <p>New user? <a href="#" class="btn btn-link rounded-button">Register here</a></p></div>
+       </center>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock main-content %}

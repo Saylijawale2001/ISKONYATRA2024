@@ -1,0 +1,146 @@
+{% extends 'base.html'%}
+{% block title %}Customer login {% endblock title %}
+{% load static%}
+{% block main-content %}
+<html xmlns="http://www.w3.org/1999/html">
+<style>
+    body {
+            background-image: url('{% static 'app/images/newpeak.png' %}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-attachment:fixed;
+        }
+
+</style>
+<head>
+	<title>user profile </title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		a {
+			color: blue;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+<div class="login-container my-5" style="width: 400px;" >
+	<center></center><h1> Yatri Profile  <img src="/static/app/images/imageicon.png" alt="Image Description" style="height: 80px; width: auto;"> </h1></center>
+	<form>
+
+				Representative Name:
+				<input type="text" name="name">
+				Representative Age:
+				<input type="number" name="age"> <br>
+				Representative Gender:
+				<input type="text" name="gender">
+
+				Chanting Rounds:
+				<input type="text" name="chanting_rounds">
+
+		        Representative Number:
+				<input type="text" name="number"> <br>
+
+				Counsellor:
+				<input type="text" name="counsellor"> <br>
+				Room's Preference:
+				<input type="text" name="room_preference">
+				Room Cost Preference:
+				<input type="text" name="room_cost_preference"> <br>
+
+				Yatra Type:
+				<input type="text" name="yatra_type">
+				City:
+				<input type="text" name="city"> <br>
+				Transport Mode:
+				<input type="text" name="transport_mode">
+				Onward Travel Details:
+				<input type="text" name="onward_travel_details"> <br>
+
+				Return Transport Mode:
+				<input type="text" name="return_transport_mode">
+				Return Travel Details:
+				<input type="text" name="return_travel_details"> <br>
+				Any Requests:
+				<input type="text" name="any_requests">
+
+		<br>
+		<h3>Members:</h3>
+		<table>
+			<tr>
+				<th> </th>
+				<th>Name:</th>
+				<th>Age:</th>
+				<th>Gender + Chanting Rounds Count:</th>
+			</tr>
+			<tr>
+				<td>Member 1</td>
+				<td><input type="text" name="member1_name"></td>
+				<td><input type="text" name="member1_age"></td>
+				<td><input type="text" name="member1_gender_chanting_rounds"></td>
+			</tr>
+			<tr>
+				<td>Member 2</td>
+				<td><input type="text" name="member2_name"></td>
+				<td><input type="text" name="member2_age"></td>
+				<td><input type="text" name="member2_gender_chanting_rounds"></td>
+			</tr>
+			<tr>
+				<td>Member 3</td>
+				<td><input type="text" name="member3_name"></td>
+				<td><input type="text" name="member3_age"></td>
+				<td><input type="text" name="member3_gender_chanting_rounds"></td>
+			</tr>
+			<tr>
+				<td>Member 4</td>
+				<td><input type="text" name="member4_name"></td>
+				<td><input type="text" name="member4_age"></td>
+				<td><input type="text" name="member4_gender_chanting_rounds"></td>
+			</tr>
+			<tr>
+				<td>Member 5</td>
+				<td><input type="text" name="member5_name"></td>
+				<td><input type="text" name="member5_age"></td>
+				<td><input type="text" name="member5_gender_chanting_rounds"></td>
+			</tr>
+			<tr>
+				<td>Member 6</td>
+				<td><input type="text" name="member6_name"></td>
+				<td><input type="text" name="member6_age"></td>
+				<td><input type="text" name="member6_gender_chanting_rounds"></td>
+			</tr>
+			<tr>
+				<td>Member 7</td>
+				<td><input type="text" name="member7_name"></td>
+				<td><input type="text" name="member7_age"></td>
+				<td><input type="text" name="member7_gender_chanting_rounds"></td>
+			</tr>
+		</table>
+</br>
+				<p><strong>Registration amount to be paid in cash: Rs. 5000 X 2 = Rs. 10000. This registration fee will be adjusted from your final payment based on actuals.</p>
+</br>
+<button type="button" class="rounded-button">Click here to edit Member's details</strong></button>
+</br>
+<a href=""><strong>Change password</strong></a>
+</form>
+</div>
+{% endblock main-content %}
+</body>
+</html>
