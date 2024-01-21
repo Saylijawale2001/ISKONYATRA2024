@@ -77,10 +77,15 @@ WSGI_APPLICATION = 'ISKON_yatra2024.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'yatra2024',
+        'USER': 'root',
+        'PASSWORD': 'root123',
+        'HOST': 'localhost',  # Set to your MySQL server host if it's not on the same machine
+        'PORT': '3306',       # Set to your MySQL server port if it's not the default (3306)
     }
 }
+
 
 
 # Password validation

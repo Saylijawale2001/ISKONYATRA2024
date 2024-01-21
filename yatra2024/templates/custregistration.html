@@ -1,189 +1,190 @@
-{% extends 'base.html'%}
-{% block title %}{% endblock title %}
-{% load static%}
+{% extends 'base.html' %}
+{% block title %}Registration Form{% endblock title %}
+{% load static %}
+
 {% block main-content %}
-
-
-
 <html>
 <head>
-  <title >Registration Form</title>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-image: url('{% static 'app/images/newpeak.png' %}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 180vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-attachment: fixed;
+        }
 
-<style>
-    body {
-        background-image: url('{% static 'app/images/newpeak.png' %}');
-        background-size: cover;
-        background-position: center;
-        margin: 0;
-        padding: 0;
-        height: 180vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-attachment:fixed;
+        .mb-3 {
+            margin-bottom: 15px;
+        }
 
-    }
+        label {
+            display: inline-block;
+            width: 300px;
+        }
 
-
-
-    .mb-3 {
-        margin-bottom: 15px;
-    }
-
-    label {
-        display: inline-block;
-        width: 300px; /* Adjust the width based on your design */
-    }
-
-    input,
-    select,
-    textarea {
-        width: 300px; /* Adjust the width based on your design */
-    }
-</style>
-
+        input,
+        select,
+        textarea {
+            width: 300px;
+        }
+    </style>
 </head>
-<div class="login-container my-5 " style="width:800;"><br>
-     <center><h1 style="font-family:Georgia">Registration Form </h1></center>
-
-      <div>
-         <label for="name">Family Representative Name:</label>
-         <input type="text" id="name" name="name" style="width : 300px"  required>
-      </div><br>
-
-      <div class="mb-3">
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required>
-      </div><br>
-      <div class="mb-3">
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-        </select>
-      </div>
-    <br>
-    <div class="mb-3">
-   <label for="chanting">How many rounds of Hare Krishna Mahamantra do you chant everyday?:</label>
-    <select id="chanting" name="chanting" required>
-      <option value="option1">1</option>
-      <option value="option2">2</option>
-      <option value="option3">3</option>
-	  <option value="option1">4</option>
-      <option value="option2">5</option>
-      <option value="option3">6</option>
-	  <option value="option1">7</option>
-      <option value="option2">8</option>
-      <option value="option3">9</option>
-	  <option value="option1">10</option>
-      <option value="option2">11</option>
-      <option value="option3">12</option>
-	  <option value="option1">13</option>
-      <option value="option2">14</option>
-      <option value="option3">15</option>
-	  <option value="option1">16</option>
-      <option value="option2">>16</option>
-    </select><br>
-         <div class="mb-3 "><br>
-    <center><input type="submit" value="Add Members" class="base rounded-button"></center>
-        </div><br>
-</div>
-</div>
 <body>
+    <div class="login-container my-5 " style="width: 800;">
+        <br>
+        <center>
+            <h1 style="font-family: Georgia">Registration Form
+                <img src="{% static 'app/images/imageicon.png' %}" alt="Image Description" style="height: 80px; width: auto;">
+            </h1>
+        </center>
 
-  <div class="login-container my-5 " style="width:800;">
+        <form id="registrationForm">
+            <!-- Representative Information -->
+            <div>
+                <label for="name">Family Representative Name:</label>
+                <input type="text" id="name" name="name" style="width: 300px;" required>
+            </div><br>
 
-<div class="mb-3">
-    <label for="contact">Family Representative Contact Number:</label>
-    <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required><br>
-	Note: Do not use already registered contact number <br>
-</div>
-        <div class="mb-3">
-    <label for="counsellor">Name of your Counsellor/ Host/Weekly-Satsang Coordinator:</label>
-     <select id="counsellor" name="counsellor" required>
-      <option value="option1">Kunai Thakur Das</option>
-      <option value="option2">Gaur Lila Das</option>
-      <option value="option3">Natwar Gauranga Das / Anandini Kishori Devi Dasi</option>
-	  <option>Ajit Madhav Das / Malini Radhika Devi Dasi</option>
-	  <option>Premdham Das / Madhurya Dham Devi Dasi</option>
-	  <option>Anupam Agrawal / Damodar Vilasini Devi Dasi</option>
-	  <option>Balram Nitai Das / Shyamla Gopi Devi Dasi</option>
-	  <option>Sujay Govinda Das / Chitralekha Sakhi Devi Dasi</option>
-	  <option>Jasbir Chauhan / Devika Chauhan</option>
-	  <option>Sri Baldev Das / Dipti Boradia</option>
-	  <option>Jai Gahlot / Shweta Gahlot</option>
-	  <option>Pransakhi Devi Dasi</option>
-	  <option>Namrata Rajdev</option>
-	  <option>Sushil Gauranga Das</option>
-	  <option>Rakesh Agrawal</option>
-	  <option>Nandkishor Das</option>
-    </select><br>
-        </div>
+            <div class="mb-3">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div><br>
 
-        <div class="mb-3">
-    <label for="room">Room's Preference:</label>
-    <select id="room" name="room" required>
-      <option value="option1">Non AC Room</option>
-      <option value="option2">AC Room</option>
-      <option value="option3">Option 3</option>
-    </select><br>
-        </div>
-        <div class="mb-3">
-    <label for="cost">Room cost preference:</label>
-    <select id="cost" name="cost" required>
-      <option value="option1">Below Rs.1000</option>
-      <option value="option2">Below Rs.1500</option>
-      <option value="option3">Below Rs.2000</option>
-	  <option value="option1">Below Rs.2500</option>
-      <option value="option2">Above Rs.2500</option>
-      <option value="option3">No Preference</option>
-    </select><br>
-        </div>
-        <div class="mb-3">
-    <label for="yatra">Yatra type:</label>
-    <select id="yatra" name="yatra" required>
-      <option value="option1">Only Varansi</option>
-      <option value="option2">Only Ayodhya</option>
-      <option value="option3">Varanasi and Ayodhya</option>
-    </select><br>
-        </div>
+            <div class="mb-3">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
 
-        <div class="mb-3">
-    <label for="city">Travelling from which city:</label>
-    <select id="city" name="city" required>
-      <option value="option1">Pune</option>
-      <option value="option2">New Delhi</option>
-      <option value="option3">Hyderabad</option>
-	  <option value="option3">Other</option>
-    </select><br>
-        </div>
+            <div class="mb-3">
+                <label for="chanting">How many rounds of Hare Krishna Mahamantra do you chant everyday?:</label>
+                <select id="chanting" name="chanting" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
 
-        <div class="mb-3">
-    <label for="onward">Onward Transport Mode:</label>
-    <select id="onward" name="onward" required>
-      <option value="option1">PUNE DNR EXPRESS (12149) 28-03-2024 </option>
-      <option value="option2">Flight or Other</option>
-    </select><br>
-        </div>
+            <hr>
 
-        <div class="mb-3">
-    <label for="return">Return Transport Mode:</label>
-    <select id="return" name="return" required>
-      <option value="option1">PUNE DNR EXPRESS (12149) 28-03-2024 </option>
-      <option value="option2">Flight or Other</option>
-    </select><br>
-        </div>
+            <!-- Additional family members will be dynamically added here -->
 
-        <div class="mb-3">
-    <label for="special">Any Special Requests:</label>
-    <textarea id="special" placeholder="Any special request" name="special"></textarea><br>
-        </div>
-        <div class="mb-3">
-    <center><input type="submit" value="Submit" class="base rounded-button"></center>
-        </div>
+            <div id="additionalMembers">
+                <!-- Dynamically added family member fields will go here -->
+            </div>
+
+            <div class="mb-3">
+                <br>
+                <center><input type="button" value="Add Member" class="base rounded-button" onclick="addMember()"></center>
+            </div>
+
+            <!-- Static fields for representative -->
+
+            <div class="mb-3">
+                <label for="contact">Family Representative Contact Number:</label>
+                <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required><br>
+                Note: Do not use already registered contact number
+            </div><br>
+
+            <div class="mb-3">
+                <label for="counsellor">Name of your Counsellor/ Host/Weekly-Satsang Coordinator:</label>
+                <select id="counsellor" name="counsellor" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="room">Room's Preference:</label>
+                <select id="room" name="room" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="cost">Room cost preference:</label>
+                <select id="cost" name="cost" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="yatra">Yatra type:</label>
+                <select id="yatra" name="yatra" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="city">Travelling from which city:</label>
+                <select id="city" name="city" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="onward">Onward Transport Mode:</label>
+                <select id="onward" name="onward" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="return">Return Transport Mode:</label>
+                <select id="return" name="return" required>
+                    <!-- Your options go here -->
+                </select><br>
+            </div>
+
+            <div class="mb-3">
+                <label for="special">Any Special Requests:</label>
+                <textarea id="special" placeholder="Any special request" name="special"></textarea><br>
+            </div>
+
+            <div class="mb-3">
+                <center><input type="submit" value="Submit" class="base rounded-button"></center>
+            </div>
+        </form>
     </div>
-  </div>
-</body>
-</html>
 {% endblock main-content %}
+    <script>
+        let memberCount = 1;
+
+        function addMember() {
+            memberCount++;
+            const memberDiv = document.createElement("div");
+            memberDiv.innerHTML = `
+                <hr>
+                <label for="name${memberCount}">Family Member ${memberCount} Name:</label>
+                <input type="text" id="name${memberCount}" name="name${memberCount}" style="width: 300px;" required><br>
+
+                <div class="mb-3">
+                    <label for="age${memberCount}">Age:</label>
+                    <input type="number" id="age${memberCount}" name="age${memberCount}" required><br>
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender${memberCount}">Gender:</label>
+                    <select id="gender${memberCount}" name="gender${memberCount}" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="chanting${memberCount}">How many rounds of Hare Krishna Mahamantra do they chant everyday?:</label>
+                    <select id="chanting${memberCount}" name="chanting${memberCount}" required>
+                        <!-- Your options go here -->
+                    </select><br>
+                </div>
+            `;
+            document.getElementById("additionalMembers").
+</script>
