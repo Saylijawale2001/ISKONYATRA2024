@@ -6,6 +6,9 @@
 <html>
 <head>
     <title>Registration Form</title>
+    <!-- Your existing HTML and scripts -->
+
+
     <style>
         body {
             background-image: url('{% static 'app/images/newpeak.png' %}');
@@ -17,8 +20,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-attachment: fixed;
+            background-attachment: fixed;s
         }
+/* Example CSS for messages (customize as needed) */
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
 
         .mb-3 {
             margin-bottom: 15px;
@@ -37,6 +48,7 @@
     </style>
 </head>
 <body>
+
     <div class="login-container my-5 " style="width: 800;">
         <br>
         <center>
@@ -44,8 +56,8 @@
                 <img src="{% static 'app/images/imageicon.png' %}" alt="Image Description" style="height: 80px; width: auto;">
             </h1>
         </center>
-
-        <form id="registrationForm">
+        <form id="registrationForm" method="post" action="{% url 'CustRegistrationView' %}">
+        {% csrf_token %}
             <!-- Representative Information -->
             <div>
                 <label for="name">Family Representative Name:</label>
@@ -68,9 +80,25 @@
 
             <div class="mb-3">
                 <label for="chanting">How many rounds of Hare Krishna Mahamantra do you chant everyday?:</label>
-                <select id="chanting" name="chanting" required>
-                    <!-- Your options go here -->
-                </select><br>
+                 <select id="chanting" name="chanting" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+	  <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+	  <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+	  <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+	  <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+          <option value="16">16</option>
+      <option value="Morethan 16">>16</option>
+    </select><br>
             </div>
 
             <hr>
@@ -96,51 +124,80 @@
 
             <div class="mb-3">
                 <label for="counsellor">Name of your Counsellor/ Host/Weekly-Satsang Coordinator:</label>
-                <select id="counsellor" name="counsellor" required>
-                    <!-- Your options go here -->
-                </select><br>
+                 <select id="counsellor" name="counsellor" required>
+      <option value="Kunai Thakur Das">Kunai Thakur Das</option>
+      <option value="Gaur Lila Das">Gaur Lila Das</option>
+      <option value="Natwar Gauranga Das / Anandini Kishori Devi Dasi">Natwar Gauranga Das / Anandini Kishori Devi Dasi</option>
+	  <option value="Ajit Madhav Das / Malini Radhika Devi Dasi">Ajit Madhav Das / Malini Radhika Devi Dasi</option>
+	  <option value="Premdham Das / Madhurya Dham Devi Dasi ">Premdham Das / Madhurya Dham Devi Dasi</option>
+	  <option value=" Anupam Agrawal / Damodar Vilasini Devi Dasi">Anupam Agrawal / Damodar Vilasini Devi Dasi</option>
+	  <option value="Balram Nitai Das / Shyamla Gopi Devi Dasi ">Balram Nitai Das / Shyamla Gopi Devi Dasi</option>
+	  <option value="Sujay Govinda Das / Chitralekha Sakhi Devi Dasi ">Sujay Govinda Das / Chitralekha Sakhi Devi Dasi</option>
+	  <option value="Jasbir Chauhan / Devika Chauhan ">Jasbir Chauhan / Devika Chauhan</option>
+	  <option value=" Sri Baldev Das / Dipti Boradia">Sri Baldev Das / Dipti Boradia</option>
+	  <option value="Jai Gahlot / Shweta Gahlot ">Jai Gahlot / Shweta Gahlot</option>
+	  <option value="Pransakhi Devi Dasi ">Pransakhi Devi Dasi</option>
+	  <option value="Namrata Rajdev ">Namrata Rajdev</option>
+	  <option value="Sushil Gauranga Das ">Sushil Gauranga Das</option>
+	  <option value="Rakesh Agrawal ">Rakesh Agrawal</option>
+	  <option value="Nandkishor Das ">Nandkishor Das</option>
+    </select>
             </div>
 
             <div class="mb-3">
                 <label for="room">Room's Preference:</label>
-                <select id="room" name="room" required>
-                    <!-- Your options go here -->
-                </select><br>
+                 <select id="room" name="room" required>
+      <option value="Non AC Room">Non AC Room</option>
+      <option value="Non AC Room">AC Room</option>
+      <option value="Non AC Room">Option 3</option>
+    </select><br>
             </div>
 
             <div class="mb-3">
                 <label for="cost">Room cost preference:</label>
                 <select id="cost" name="cost" required>
-                    <!-- Your options go here -->
-                </select><br>
+      <option value="Below Rs.1000">Below Rs.1000</option>
+      <option value="Below Rs.1500">Below Rs.1500</option>
+      <option value="Below Rs.2000">Below Rs.2000</option>
+	  <option value="Below Rs.2500">Below Rs.2500</option>
+      <option value="Above Rs.2500">Above Rs.2500</option>
+      <option value="No Preference">No Preference</option>
+    </select><br>
             </div>
 
             <div class="mb-3">
                 <label for="yatra">Yatra type:</label>
-                <select id="yatra" name="yatra" required>
-                    <!-- Your options go here -->
-                </select><br>
+                  <select id="yatra" name="yatra" required>
+      <option value="Only Varansi">Only Varansi</option>
+      <option value="Only Ayodhya">Only Ayodhya</option>
+      <option value="Varanasi and Ayodhya">Varanasi and Ayodhya</option>
+    </select><br>
             </div>
 
             <div class="mb-3">
                 <label for="city">Travelling from which city:</label>
-                <select id="city" name="city" required>
-                    <!-- Your options go here -->
-                </select><br>
+                 <select id="city" name="city" required>
+      <option value="Pune">Pune</option>
+      <option value="New Delhi">New Delhi</option>
+      <option value="Hyderabad">Hyderabad</option>
+	  <option value="Other">Other</option>
+    </select><br>
             </div>
 
             <div class="mb-3">
                 <label for="onward">Onward Transport Mode:</label>
-                <select id="onward" name="onward" required>
-                    <!-- Your options go here -->
-                </select><br>
+                  <select id="onward" name="onward" required>
+      <option value="PUNE DNR EXPRESS (12149) 28-03-2024">PUNE DNR EXPRESS (12149) 28-03-2024 </option>
+      <option value="Flight or Other">Flight or Other</option>
+    </select><br>
             </div>
 
             <div class="mb-3">
                 <label for="return">Return Transport Mode:</label>
-                <select id="return" name="return" required>
-                    <!-- Your options go here -->
-                </select><br>
+               <select id="return" name="return" required>
+      <option value="PUNE DNR EXPRESS (12149) 28-03-2024">PUNE DNR EXPRESS (12149) 28-03-2024 </option>
+      <option value="Flight or Other">Flight or Other</option>
+    </select><br>
             </div>
 
             <div class="mb-3">
@@ -152,8 +209,9 @@
                 <center><input type="submit" value="Submit" class="base rounded-button"></center>
             </div>
         </form>
+
     </div>
-{% endblock main-content %}
+
     <script>
         let memberCount = 1;
 
@@ -176,15 +234,38 @@
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
-                    </select>
+                                       </select>
                 </div>
 
                 <div class="mb-3">
                     <label for="chanting${memberCount}">How many rounds of Hare Krishna Mahamantra do they chant everyday?:</label>
                     <select id="chanting${memberCount}" name="chanting${memberCount}" required>
-                        <!-- Your options go here -->
+
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+	  <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+	  <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+	  <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+	  <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+	  <option value="16">16</option>
+      <option value="more than 16">>16</option>
+
                     </select><br>
                 </div>
             `;
-            document.getElementById("additionalMembers").
-</script>
+            document.getElementById("additionalMembers").appendChild(memberDiv);
+        }
+    </script>
+</body>
+</html>
+{% endblock main-content %}
+

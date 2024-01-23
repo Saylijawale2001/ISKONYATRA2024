@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'ISKON_yatra2024.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'yatra2024',
+        'NAME': 'yatrademo',
         'USER': 'root',
         'PASSWORD': 'root123',
         'HOST': 'localhost',  # Set to your MySQL server host if it's not on the same machine
@@ -131,3 +131,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'yatra2024/static')]  # Adjust this a
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
